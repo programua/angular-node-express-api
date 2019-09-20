@@ -24,7 +24,7 @@ router.post('/', async (req, res, next) => {
   }
 });
 
-router.put(":/id", async (req, res, next) => {
+router.get(":/id", async (req, res, next) => {
   try {
     const customer = await CustomerService.retrieve(req.params.id);
     return res.json({ customer: customer });
@@ -37,5 +37,18 @@ router.put(':/id', async (req, res, next) => {
   try {
     const customer = await CustomerService.update(req.params.id, req.body);
     return res.json({ customer: customer });
+  } catch(err) {
+    return next(err);
+  } 
+});
+
+router.delete('/:id', async (req, res, next) => {
+  try {
+    const customer = await CustomerService.delete(req.params.id);
+    return res.json({  success: true  })
+  } catch (err) {
+    return next(err);
   }
 });
+
+module.exports = router;
