@@ -4,7 +4,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var process = require('process');
 
-var users = require('./routes/users');
+var customer = require('./routes/customer');
 var generate_uid = require('./generate_uid');
 
 var app = express();

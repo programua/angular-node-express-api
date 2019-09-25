@@ -1,4 +1,4 @@
-const CustomerModel = require("../models/model.customer");
+const CustomerModel = require("../models/models.customer");
 let Validator = require('fastest-validator');
 
 let customers = {};
